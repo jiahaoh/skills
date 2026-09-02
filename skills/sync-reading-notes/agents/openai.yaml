@@ -1,0 +1,11 @@
+interface:
+  display_name: "Sync Reading Notes"
+  short_description: "Create missing notes for recent Zotero papers"
+  default_prompt: "Use $sync-reading-notes to create missing reading notes for my recent Zotero papers."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "zotero-mcp"
+      description: "Zotero MCP server for recent items, metadata, attachments, and full text"
+policy:
+  allow_implicit_invocation: false

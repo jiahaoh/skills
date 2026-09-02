@@ -1,0 +1,9 @@
+interface:
+  display_name: "Zotero Paper Summarizer"
+  short_description: "Create traceable, full-text Zotero reading notes"
+  default_prompt: "Use $zotero-paper-summarizer to create a structured reading note for this paper."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "zotero-mcp"
+      description: "Zotero MCP server for library search, metadata, and full text"
