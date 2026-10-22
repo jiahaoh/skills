@@ -20,7 +20,7 @@ Rules that came back as review comments on first drafts of figures, reports and 
 - **Everything from a script.** Every figure, report and review page is rebuilt by rerunning its script. Hand edits happen only later, on exported vector files.
 - **Final size from the start.** Draw panels at print size in mm, with print font sizes, and never rescale them.
 - **Vector out, raster inside.** Export editable vector files plus a PNG preview. Rasterize only dense layers such as points, maps and renders.
-- **One color source.** Read colors from a frozen palette file. Every color code needs a visible key, and "unclassified" is always neutral grey.
+- **One color source.** Read colors from a frozen palette file. Start from the colormap collection, and add any colormap the user liked to it. Every color code needs a visible key, and "unclassified" is always neutral grey.
 - **Nothing overlaps.** Labels never sit on color strips, leaders or data. Leaders are short and never cross.
 - **Names are consistent.** Short codes go on the plot and full names in the legend. One quantity keeps one name everywhere. Numbering is consecutive, with no gaps.
 - **Panels carry no prose.** Definitions and caveats go to the caption.
@@ -34,9 +34,11 @@ Rules that came back as review comments on first drafts of figures, reports and 
 | [references/process.md](references/process.md) | Planning a figure or page, running a review round, building a picker |
 | [references/figures.md](references/figures.md) | Drawing or composing manuscript panels, specific chart types |
 | [references/color-and-labels.md](references/color-and-labels.md) | Choosing palettes or colormaps, placing labels, legends, colorbars and leaders |
+| [references/colormaps.md](references/colormaps.md) | Picking a colormap or palette from the collection, or adding one the user liked |
 | [references/reports.md](references/reports.md) | Building an HTML report, review page or figure preview for collaborators |
 | [references/artifacts.md](references/artifacts.md) | Publishing pages as Claude Artifacts (Claude-specific mechanics) |
 | [assets/figstyle.py](assets/figstyle.py) | Starting matplotlib style for a new project: rcParams, mm sizing, `save()`, panel header |
+| [assets/colormaps/](assets/colormaps/colormaps.json) | The colormap collection (`colormaps.json`) and its tool (`cmaps.py`: list, check, preview, register) |
 
 ## Checklist before sending
 

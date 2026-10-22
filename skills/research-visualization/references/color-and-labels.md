@@ -2,6 +2,7 @@
 
 ## Color
 
+- Start from the colormap collection ([colormaps.md](colormaps.md)). Prefer `proven` entries, and never propose a `rejected` one.
 - Follow the field's reference scheme where one exists, such as an atlas's cell-type and region colors. Give new types colors on their family's **tint-shade surface** around the reference main color (chroma follows lightness), so they still read as members of the family.
 - Use color to show relations the reader should see: **hue** separates sub-families (layers, subclasses, lineages) and **lightness** separates members. Explain the color logic in words when delivering a palette.
 - When asked to make a palette "more harmonious", keep each color's direction (hue order) and change only lightness and chroma.

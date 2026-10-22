@@ -1,0 +1,310 @@
+{
+ "version": 1,
+ "entries": [
+  {
+   "name": "apricot-violet",
+   "kind": "sequential",
+   "status": "proven",
+   "added": "2026-10-15",
+   "colors": [
+    "#FCE6CF",
+    "#F8CDB8",
+    "#F4B0CC",
+    "#D79BD6",
+    "#A58BDB",
+    "#7D74C9"
+   ],
+   "good_for": "Heatmaps, density renders and continuous covariates on embeddings, on a white page.",
+   "avoid": "Reversing it: a dark low end hides low values on white.",
+   "why": "The low end is tinted, not white, so low values stay visible; lightness falls monotonically."
+  },
+  {
+   "name": "steel-blue",
+   "kind": "sequential",
+   "status": "tried",
+   "added": "2026-10-20",
+   "colors": [
+    "#E4F0F7",
+    "#A9CFE3",
+    "#5FA3C9",
+    "#2E7DA6",
+    "#1B4F70"
+   ],
+   "good_for": "A per-modality map that matches the steel blue of modality-pair.",
+   "avoid": "Next to another blue data class.",
+   "why": "Single hue, so the map reads as the same modality as its accent color."
+  },
+  {
+   "name": "ylgnbu",
+   "kind": "sequential",
+   "status": "proven",
+   "added": "2026-10-16",
+   "base": "YlGnBu",
+   "good_for": "Gene expression on maps and 3D scatters, scaled to the 1st-99th percentile of expressing cells, non-expressing cells faint grey.",
+   "avoid": "Very small dots: the yellow low end disappears on white; use ylgnbu-trunc there.",
+   "why": "Chosen over four other colormaps; the strong-weak contrast reads clearly."
+  },
+  {
+   "name": "ylgnbu-trunc",
+   "kind": "sequential",
+   "status": "tried",
+   "added": "2026-10-19",
+   "base": "YlGnBu",
+   "range": [
+    0.2,
+    1.0
+   ],
+   "good_for": "Small expression thumbnails over a light grey ghost of the other cells.",
+   "avoid": "Large heatmaps, where the full range is fine.",
+   "why": "Dropping the near-white low end keeps weak expression visible on small dots."
+  },
+  {
+   "name": "rdbu-r-centered",
+   "kind": "diverging",
+   "status": "tried",
+   "added": "2026-10-16",
+   "base": "RdBu_r",
+   "good_for": "log2 enrichment or fold change, with a symmetric norm centered at 0.",
+   "avoid": "Quantities with no meaningful zero.",
+   "why": "White at zero lets depletion and enrichment read as two directions."
+  },
+  {
+   "name": "tint-shade-families",
+   "kind": "nested-categorical",
+   "status": "proven",
+   "added": "2026-10-16",
+   "families": [
+    {
+     "main": "#2ca02c",
+     "members": [
+      "#aab63e",
+      "#a1c255",
+      "#87aa26",
+      "#7abe72",
+      "#1eac4b",
+      "#19982c",
+      "#70a13e",
+      "#689700",
+      "#10a869",
+      "#177836",
+      "#63710b",
+      "#00602d",
+      "#00ba93",
+      "#2dd199",
+      "#878500",
+      "#9b9729"
+     ]
+    },
+    {
+     "main": "#98df8a",
+     "members": [
+      "#98df8a"
+     ]
+    },
+    {
+     "main": "#ff7f0e",
+     "members": [
+      "#dd6e38",
+      "#ff7441",
+      "#ee4a5b",
+      "#ff4f49",
+      "#dab10f",
+      "#fa8300",
+      "#f8a82b"
+     ]
+    },
+    {
+     "main": "#ff9896",
+     "members": [
+      "#e588ad",
+      "#df8973",
+      "#ffa690"
+     ]
+    },
+    {
+     "main": "#e377c2",
+     "members": [
+      "#a35fa9",
+      "#d286dc",
+      "#ff9fd6",
+      "#fabfe8",
+      "#dd67a1"
+     ]
+    },
+    {
+     "main": "#da7f8c",
+     "members": [
+      "#da7f8c"
+     ]
+    },
+    {
+     "main": "#dbdb8d",
+     "members": [
+      "#dbdb8d",
+      "#9da968",
+      "#a59257"
+     ]
+    },
+    {
+     "main": "#c5b0d5",
+     "members": [
+      "#c5b0d5"
+     ]
+    },
+    {
+     "main": "#9edae5",
+     "members": [
+      "#9edae5",
+      "#78a9b8"
+     ]
+    },
+    {
+     "main": "#778a84",
+     "members": [
+      "#778a84"
+     ]
+    },
+    {
+     "main": "#a2b1d8",
+     "members": [
+      "#a2b1d8"
+     ]
+    },
+    {
+     "main": "#8599cb",
+     "members": [
+      "#8599cb"
+     ]
+    },
+    {
+     "main": "#c49c94",
+     "members": [
+      "#c49c94"
+     ]
+    },
+    {
+     "main": "#1f77b4",
+     "members": [
+      "#1f77b4"
+     ]
+    },
+    {
+     "main": "#8e6d61",
+     "members": [
+      "#8e6d61"
+     ]
+    },
+    {
+     "main": "#8c564b",
+     "members": [
+      "#8c564b"
+     ]
+    }
+   ],
+   "good_for": "Two-level labels (classes and their subtypes): a class uses its main color, its members sit on the main color's tint-shade surface.",
+   "avoid": "Flat palettes with many unrelated labels; members of one family are meant to look related.",
+   "why": "Hue separates families and sub-families, lightness separates members, so the hierarchy is visible without a legend.",
+   "origin": "Main colors from the published palette of Shi et al. 2023 (Nature), largely matplotlib tab20; members generated around each main color (chroma follows lightness), then tuned so neighbors differ."
+  },
+  {
+   "name": "atlas-regions-20",
+   "kind": "categorical",
+   "status": "proven",
+   "added": "2026-10-14",
+   "colors": [
+    "#FFB6C1",
+    "#FCAE1E",
+    "#B8860B",
+    "#56E356",
+    "#2DB72D",
+    "#2E8B57",
+    "#98BF64",
+    "#9E7BB3",
+    "#9400D3",
+    "#C71585",
+    "#FFA07A",
+    "#CBA2C9",
+    "#AD6BEB",
+    "#7A3F77",
+    "#6C6CFC",
+    "#D282A3",
+    "#311465",
+    "#4040B8",
+    "#022D36",
+    "#29021A"
+   ],
+   "good_for": "Up to 20 spatial domains on a map, with dark entries for small or thin structures.",
+   "avoid": "Dot-heavy plots where the near-black entries vanish.",
+   "why": "A published atlas palette that readers of the field recognise.",
+   "origin": "Region palette of Shi et al. 2023 (Nature), 20-color subset."
+  },
+  {
+   "name": "modality-pair",
+   "kind": "pair",
+   "status": "proven",
+   "added": "2026-10-20",
+   "colors": [
+    "#6A5D9F",
+    "#2E7DA6"
+   ],
+   "good_for": "Two assays or modalities throughout a figure: histograms, accents, half-page tints.",
+   "avoid": "Pages whose data colors include violet or blue classes.",
+   "why": "Calm, distinct hues that do not clash with pink or teal highlight colors."
+  },
+  {
+   "name": "highlight-pair",
+   "kind": "pair",
+   "status": "proven",
+   "added": "2026-10-19",
+   "colors": [
+    "#2E8C7A",
+    "#E0457B"
+   ],
+   "good_for": "A positive class and its nested subset (teal, then pink) over grey or ghosted cells.",
+   "avoid": "Next to accents in the same hues.",
+   "why": "Strong contrast with each other and with grey."
+  },
+  {
+   "name": "neutral-grey",
+   "kind": "single",
+   "status": "proven",
+   "added": "2026-10-16",
+   "colors": [
+    "#D9D9D9"
+   ],
+   "good_for": "Unclassified or no-type cells, background ghosts.",
+   "avoid": "As a data class.",
+   "why": "Recedes behind any categorical palette."
+  },
+  {
+   "name": "apricot-violet-reversed",
+   "kind": "sequential",
+   "status": "rejected",
+   "added": "2026-10-15",
+   "colors": [
+    "#7D74C9",
+    "#A58BDB",
+    "#D79BD6",
+    "#F4B0CC",
+    "#F8CDB8",
+    "#FCE6CF"
+   ],
+   "good_for": "",
+   "avoid": "Everything: rejected in review.",
+   "why": "Compared side by side with apricot-violet in review; the original direction was preferred."
+  },
+  {
+   "name": "pink-mint-pair",
+   "kind": "pair",
+   "status": "rejected",
+   "added": "2026-10-15",
+   "colors": [
+    "#E886B3",
+    "#5DBB97"
+   ],
+   "good_for": "",
+   "avoid": "Pages that also use a pink or teal data class.",
+   "why": "As modality accents they clashed with the pink highlight class, making the page ambiguous."
+  }
+ ]
+}

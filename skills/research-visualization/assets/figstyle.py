@@ -7,6 +7,9 @@
   so axes, text and legends stay vector while files stay small enough for a vector editor.
 - Every panel is saved as .svg + .pdf (for editing) and .png (for quick review).
 """
+import sys
+from pathlib import Path
+
 import matplotlib as mpl
 import matplotlib.colors as mcolors
 import matplotlib.pyplot as plt
@@ -43,12 +46,16 @@ mpl.rcParams.update({
 # bars and boxes: color at FILL_ALPHA with a thin dark edge; medians and marks in the same color, opaque
 FILL_ALPHA = 0.5
 EDGE_COLOR = "#333333"
-UNCLASSIFIED = "#D9D9D9"
 
-# light sequential colormap (apricot -> pink -> lavender -> violet): the low end is tinted, not white,
-# so low values stay visible on a white page; lightness falls monotonically
-LIGHT_CMAP = mcolors.LinearSegmentedColormap.from_list(
-    "light", ["#FCE6CF", "#F8CDB8", "#F4B0CC", "#D79BD6", "#A58BDB", "#7D74C9"])
+# colormap collection (colormaps/ next to this file; copy the folder with it): register the custom maps so
+# plt.get_cmap("apricot-violet") etc. work; LIGHT_CMAP = the default light sequential map (tinted low end,
+# so low values stay visible on a white page)
+sys.path.insert(0, str(Path(__file__).with_name("colormaps")))
+import cmaps  # noqa: E402
+
+cmaps.register_all()
+LIGHT_CMAP = cmaps.to_cmap("apricot-violet")
+UNCLASSIFIED = cmaps.colors("neutral-grey")[0]
 
 
 def save(fig, out_dir, name, formats=("svg", "pdf", "png"), png_dpi=300, tight=True, transparent=False):
