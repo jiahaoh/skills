@@ -6,6 +6,8 @@
 - Dense layers (scatter points, maps, renders) are rasterized on the artist (`rasterized=True`) at RASTER_DPI,
   so axes, text and legends stay vector while files stay small enough for a vector editor.
 - Every panel is saved as .svg + .pdf (for editing) and .png (for quick review).
+- Reruns write identical bytes (fixed `svg.hashsalt`, no dates in SVG or PDF metadata), so output
+  hashes recorded for provenance only change when the figure does.
 """
 import sys
 from pathlib import Path
@@ -37,6 +39,7 @@ mpl.rcParams.update({
     "axes.spines.right": False,
     "legend.frameon": False,
     "svg.fonttype": "none",
+    "svg.hashsalt": "figstyle",  # fixed SVG element IDs, so reruns write identical bytes
     "pdf.fonttype": 42,
     "ps.fonttype": 42,
     "savefig.dpi": RASTER_DPI,
@@ -58,6 +61,10 @@ LIGHT_CMAP = cmaps.to_cmap("apricot-violet")
 UNCLASSIFIED = cmaps.colors("neutral-grey")[0]
 
 
+# no dates (and no version string in the SVG) in file metadata, so a rerun writes the same bytes
+SAVE_METADATA = {"svg": {"Date": None, "Creator": None}, "pdf": {"CreationDate": None}}
+
+
 def save(fig, out_dir, name, formats=("svg", "pdf", "png"), png_dpi=300, tight=True, transparent=False):
     """Write `name`.svg/.pdf/.png into out_dir (a pathlib.Path).
 
@@ -67,7 +74,9 @@ def save(fig, out_dir, name, formats=("svg", "pdf", "png"), png_dpi=300, tight=T
     kw = dict(bbox_inches="tight", pad_inches=0.02) if tight else {}
     kw["transparent"] = transparent
     for fmt in formats:
-        fig.savefig(out_dir / f"{name}.{fmt}", dpi=png_dpi if fmt == "png" else RASTER_DPI, **kw)
+        meta = SAVE_METADATA.get(fmt)
+        fig.savefig(out_dir / f"{name}.{fmt}", dpi=png_dpi if fmt == "png" else RASTER_DPI,
+                    **kw, **({"metadata": meta} if meta else {}))
     plt.close(fig)
 
 

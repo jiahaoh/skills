@@ -2,6 +2,8 @@
 
 ## Size and type
 
+These sizes are for print. Slide figures are drawn in slide px: see [slides.md](slides.md#slide-charts).
+
 - Draw at the final print size, in mm. Typical journal widths are 89 mm (single column), 120 mm (1.5 column) and 183 mm (double column); pages are at most about 247 mm tall. Never rescale later, in code or in the vector editor.
 - Use Arial (or the journal font): 7 pt text, 6 pt ticks and legends, 8 pt bold panel letters. Text inside small panels (ring labels, compact legends) may drop to 4–5.5 pt, never below about 3.3 pt.
 - Axes lines 0.5 pt, data lines 0.75 pt.
@@ -33,3 +35,15 @@
 - **Sankey**: color bands from the target palette and leave residual nodes (per-group unclassified) unlabelled to keep the plot quiet.
 - **Examples cited in the text**: put numbered arrows at the same spots on each compared panel.
 - **Scale bars** on every spatial panel.
+- **Microscopy images**: show the raw image before detections or overlays; show named z-slices or an orthogonal view rather than a maximum projection when spots or cells are the point; prefer large fields to small crops; name the dataset or condition on the panel; key overlay colors with square swatches; keep labels outside the image. Details in [slides.md](slides.md#images).
+- **Results tables and charts**: encode good and bad (a color scale per column, the best value marked) and state which way is better. For many conditions, use dot plots, slope charts, small multiples or a colored table rather than grouped bars ([slides.md](slides.md#slide-charts)).
+
+## Diagrams
+
+Schematics, workflows and architecture figures, in any medium.
+
+- Keep them light: thin strokes, no heavy black label bars, no red borders, boxes not crowded. Connectors stay lighter than the data.
+- Group containers are dashed outlines with a plain label. Tell items apart by a light fill or edge color, not by stroke weight.
+- Measure every text and fit the box to it; never let text overflow or shrink below the medium's minimum (print: the panel text size above; slides: 22 px).
+- One color per family or stage, used the same way in every diagram of the work.
+- Slide-specific rules (method banners, "where we are" schematics) are in [slides.md](slides.md#diagrams).

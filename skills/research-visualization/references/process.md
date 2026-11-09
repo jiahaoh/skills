@@ -18,6 +18,7 @@
 
 - **Many candidates**: build a checklist page whose saved state the agent reads back, instead of asking the user to type the names.
 - **Continuous parameters** (camera azimuth, elevation, roll, scale, cutoffs): build a page with sliders that prints the parameters ready to paste back as code.
+- **Layouts** (slides, figure pages): build a layout board, a page backed by its database with one canvas per item at its real size. The author draws regions, text and notes and writes a note per item; the agent reads them back and replies per item in a reply field. The agent never overwrites the author's shapes or notes. To propose shapes, ask the author to close the board first, then append to the stored shapes. See [slides.md](slides.md#layout-review-on-a-board).
 - Re-render from the picked parameters, and record them in the script under a named job.
 
 ## Everything from a script
@@ -29,6 +30,12 @@
 ## Review rounds
 
 - Reviewers comment on the published page. Read every thread and apply the comments.
+- On a board or picker, the notes live where the page stores them (its database), not in comment threads. Read the database; check comment threads too.
+- **Archive the notes verbatim before applying** anything, and archive the replies before the board is cleared, so every round can be traced.
+- Sort the notes into item-specific ones and general ones ("apply to every slide like this").
+- Reply per item: what changed, or why not.
+- Many items: one agent per section applies its notes, an independent agent checks each section against the notes, and the section agent fixes what it found.
+- **Distil** the general notes into rules in the project profile, each with its date, source and one line of Why, so promotion into this skill stays mechanical.
 - A comment applies to the element it was left on. When it states a pattern ("same colorbar problem"), apply it to every sibling panel and say so.
 - Keep a **Changes** table on the review page (location | comment | what was done) and a short list of open questions. Bump the version note each round.
 - Archive review marks before resetting them for a new round.

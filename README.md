@@ -11,7 +11,7 @@ between projects.
 | --- | --- | --- | --- |
 | [`sync-reading-notes`](skills/sync-reading-notes/SKILL.md) | Explicit | Create missing Obsidian reading notes for recent Zotero papers as a controlled batch. | Personal |
 | [`zotero-paper-summarizer`](skills/zotero-paper-summarizer/SKILL.md) | Automatic or explicit | Create one evidence-grounded reading note from verified full text. | Personal |
-| [`research-visualization`](skills/research-visualization/SKILL.md) | Automatic or explicit | Apply review-tested rules for research figures, reports and review pages. | Personal |
+| [`research-visualization`](skills/research-visualization/SKILL.md) | Automatic or explicit | Apply review-tested rules for research figures, talk slides, reports and review pages. | Personal |
 | [`unslop`](skills/unslop/SKILL.md) | Explicit | Remove common AI-writing patterns while preserving meaning and voice. | Vendored from Cursor pstack |
 | [`grill-with-docs`](skills/grill-with-docs/SKILL.md) | Explicit | Stress-test a plan while maintaining a project glossary and selective ADRs. | Adapted from Matt Pocock |
 | [`wizard`](skills/wizard/SKILL.md) | Automatic or explicit | Generate an interactive shell guide for manual setup or migration steps. | Adapted from Matt Pocock |
