@@ -1,6 +1,6 @@
 # Slides
 
-Rules for research-talk slides, settled over five layout-board review rounds of one long talk and declared general on 2026-11-09. Sizes assume a 1920 × 1080 slide. A design system's slide and chart sections override the look defaults here; the project profile overrides both.
+Rules for research-talk slides, settled over five layout-board review rounds of one long talk and declared general on 2026-11-09. Sizes are in slide px on a 1920 × 1080 slide. Look values (text sizes, line weights, colors) come from the design system; without one, choose them once, record them in the project profile and keep them for the whole talk. The project profile overrides both.
 
 ## Talk template
 
@@ -13,10 +13,10 @@ Rules for research-talk slides, settled over five layout-board review rounds of 
 - **One visual centre.** One figure block (one figure, or sibling figures on a shared baseline) fills at least half of the space below the title. A text slide has at most three short bullets.
 - **About 40 words** below the title. Quotes, caveats, extra numbers and sources go to the notes.
 - Titles are short noun phrases.
-- **Text is black.** Body text (lead, bullets) is about 30 px; chart and diagram text follow their sections below. Color belongs to the data: no accent-colored numbers or headings. The exceptions are the which-way-is-better tag (accent text) and the active step-track marker (accent fill).
+- **Text is black.** Body text (lead, bullets) is at the design system's body size, the largest text below the title; chart and diagram text follow their sections below. Color belongs to the data: no accent-colored numbers or headings. The exceptions are the which-way-is-better tag (accent text) and the active step-track marker (accent fill).
 - **No page components:** no KPI numbers, ruled column headings, callouts, or a caption under every block.
-- **Fill the frame.** Cards fill their boxes and figures fill the slide. Keys and captions sit below the figure, not above it.
-- **Answer the question on the slide.** If a reviewer asks what something is, the slide is unclear. Label it so the question does not come up.
+- **Fill the frame.** Cards fill their boxes and figures fill the slide. Keys and captions sit below the figure or table, not above it.
+- **Answer the question on the slide.** If a reviewer asks what something is, the slide is unclear. Label it so the question does not come up, and answer the question in the reply.
 
 ## Clean slide face
 
@@ -28,27 +28,28 @@ Rules for research-talk slides, settled over five layout-board review rounds of 
 ## Slide charts
 
 - Draw charts from a script, as SVG with text as text, at the size they fill on the slide, in slide px. Never scale a chart to fit its slot. Laying out at 72 dpi makes one SVG point one slide pixel.
-- Text sizes at slot size: title 22 px, axis labels 20 px, ticks 18 px, legend and notes 17 px. Nothing below 17 px.
-- Default look: title centred above the axes, left and bottom axes only, no grid, lines 3 px with markers, point labels in the series color, ratios in a small framed box, opaque bars with a thin ink edge. Legend in a framed box at the upper left, stacked, or as a label at each line's end.
+- Text sizes at slot size come from the design system: title, axis labels, ticks, then legend and notes, in falling order. The smallest is the floor; nothing goes below it.
+- Default look: title centred above the axes, left and bottom axes only, no grid, lines at the design system's weight with markers, point labels in the series color, ratios in a small framed box, opaque bars with a thin ink edge. Legend in a framed box at the upper left, stacked, or as a label at each line's end.
 - Label every axis, with units. Keep the order of panels and conditions the same as on the slide that introduced them.
 - **Which way is better:** one form for the whole talk (for example a pill "↑ higher is better"), prominent, on every metric axis or metric picture. Leave it out where a ✓/✗ badge or the chart already says it.
 - **Results show the winner.** A table or chart of results encodes good and bad (a color scale per column, the best value marked), so the best and worst read without reading numbers. Make it large.
 - **Many conditions:** grouped bars with many groups are hard to read. Use dot plots, slope charts, small multiples or a colored table.
 - One fixed color per method or arm for the whole talk.
 - A raster picture with text (a timeline drawn with an image library) follows the same sizes and colors and is saved at twice its slot size.
+- Let the slide draw a chart from data only when the chart itself animates. Otherwise ship the script's SVG.
 
 ## Diagrams
 
 - **Light.** Thin strokes, no heavy black label bars, no red borders. Boxes are not crowded.
 - Group containers are dashed outlines with a plain label. Items are told apart by a light fill or edge color, not by weight.
-- Diagram text is at least 22 px at slide size. Measure every text and widen the box rather than letting text overflow.
+- Diagram text is never smaller than the design system's small slide text. Measure every text and widen the box rather than letting text overflow.
 - A slide that is only a diagram has no lead. The sentence goes to the notes.
 - A recurring overview schematic can open each section with the current part lit ("where we are"). Draw it once and reuse it.
 - The general diagram grammar is in [figures.md](figures.md#diagrams).
 
 ## Methods as banners
 
-- One banner per method: its name, what it does in one line, and a small pictogram of what it does (what it removes, what it can move, how it finds a thing).
+- One banner per method: its name, what it does in one line, its principle as one short bullet only where needed, and a small pictogram of what it does (what it removes, what it can move, how it finds a thing).
 - Group methods by family, one light color per family. Split families across slides when one slide cannot hold them.
 - A pictogram's ground matches its card.
 - Where a click-driven animation explains the method better, it replaces the pictogram.
@@ -64,14 +65,14 @@ Rules for research-talk slides, settled over five layout-board review rounds of 
 - **Real data where it exists.** Show a method's behaviour on real images, with the schematic beside them, not instead of them. Use more than one dataset where results may differ.
 - **Square-swatch keys** for image colors, not pills, with one wording for the whole talk (for example "reference / moving / overlap").
 - Labels sit outside the image and never cover it.
-- A dark ground is allowed on an image-heavy slide where white makes the image look out of place.
+- A dark ground is allowed on an image-heavy slide where white makes the image look out of place, as a choice for that slide, never as a theme.
 
 ## Benchmarks
 
 - **Design before results.** Before any result, a slide says which data (synthetic conditions and their parameters, real datasets), how the experiment runs (workflow, arms) and which metrics, each metric as a small picture of how it is computed. Use a design slide and a result slide when one slide cannot hold both.
 - Every metric says which way is better.
 - **Show downstream benefit.** Judge a processing step by what it does to the next steps, on a designed case where the problem is present.
-- Show each method on the data that shows its effect.
+- Show each method on the data that shows its effect. A method that changes intensities or value distributions adds the histogram before and after.
 - A planned or unfinished run gets a fallback slide that says what it will test, never a result.
 
 ## Motion and builds
@@ -82,6 +83,7 @@ Rules for research-talk slides, settled over five layout-board review rounds of 
 - A step track marks the steps: the active marker fills with the accent color and its label turns bold. No progress bar or timeline.
 - **One animation at a time.** Only the panel that just entered plays; earlier panels hold their last frame. An animation plays once unless a loop is asked for. A method's panel may enter still and play on the next click.
 - **The last state reads alone,** because print and PDF show only it.
+- Respect reduced motion: when the viewer asks for it, drop the transitions and show each state directly.
 
 ## Presenter notes
 

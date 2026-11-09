@@ -13,7 +13,10 @@
 - Check accent colors against data colors: an accent that matches a data class makes the page ambiguous. Give one assay or modality one hue everywhere (histograms, colormaps, page accents).
 - Every color code (pills, chips, bands, heatmaps) needs a visible key.
 - When a design system supplies the colors, use its token names, never copied hex values, and record its version. Where several tokens share a hue, label each colored mark by name too.
-- One mapping per concept across a talk or paper: an image channel, a method or a stage keeps its color everywhere.
+- One mapping per concept across talks, reports and papers of the same work: an image channel, a method or a stage keeps its color everywhere.
+- Color never carries meaning alone. A status color comes with a word or glyph (High / Low, ✓ △ ✗); the word carries the meaning and the color repeats it. Red/green status pairs merge under color-vision deficiency, worst near a threshold.
+- Text and its ground meet 4.5:1 contrast in every theme the page supports.
+- A named third-party product may keep its own color and logo, as a label only, where it is named. Logos are trademarks: keep the files as assets with their license recorded, and check the use before the material leaves the group.
 
 ## Names
 
@@ -30,6 +33,8 @@
 - Name the base of every percentage where it could have two ("12 % of all reads" vs "15 % more than the baseline").
 - Use log axes where values span decades, labelled with units.
 - Annotate ratios on the chart ("2.3× faster").
+- Use a real minus sign (−5, not -5) in text and labels.
+- Use tabular figures wherever digits line up (tables, value columns, counters).
 - Set paths, IDs and config keys in mono.
 
 ## On-plot labels and leaders

@@ -9,9 +9,14 @@
 - Use the full page column (about 1180 px) for text, tables and figures, with no narrow reading column. Sibling tables and figures share one width; only a multi-panel map row may break out. A wide table gets fixed, equal-width columns instead of breaking out.
 - Show the version history as a bullet list, with a clean comparison table across versions (counts and what changed). Give each version its own tab, with the latest as the default.
 - A preview whose purpose is the look of the figures is a clean board: titles only, no prose.
+- A page with five or more sections gets a sticky table of contents that marks the section in view.
+- Filters sit in one row above their table, with the row count at the end of the row.
 
 ## Text and tables
 
+- Write plainly and specifically, in the field's own terms. No marketing words, exclamation marks or decorative emoji.
+- Headings and labels in sentence case. The first sentence of a section states its claim; the rest is the evidence.
+- A page written in another language keeps technical terms in English.
 - Prefer bullets to paragraphs, inside table cells too (no comma- or semicolon-joined lists).
 - Put the definitions of a table's columns right above it, with a **worked example**. A small card with leaders pointing at each part of one cell works well. Define only that table's columns and skip self-evident ones.
 - A name column shows the clean name; the reason or evidence goes in its own column.
@@ -24,6 +29,7 @@
 ## Figures on pages
 
 - Multi-panel figures: panel titles aligned on one line, nothing overlapping strips or annotations, and no wasted whitespace.
+- A borrowed figure carries a citation line under it (authors, venue, year). On talk slides the source goes to the notes instead.
 - Show the final labels next to the reference levels in one row (for example, reference summary | reference fine level | our labels), not only the raw clusters.
 - When many groups need inspecting, add a dropdown that shows one group at a time, with its key evidence next to the map.
 - Interactive side panels use the vertical space: one evidence item per line (gene, value, small bar), the color key in one column, one-line captions, and right-aligned values.
@@ -38,3 +44,4 @@
 ## Deliverables
 
 - Build the page with a script. Also export a self-contained single HTML file (its own skeleton and charset, figures inlined as WebP, data inlined) as the file to send.
+- A file that must open offline uses system fonts or embeds its fonts; hosted webfonts do not load without a network.

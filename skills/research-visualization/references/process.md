@@ -13,6 +13,7 @@
 - Never offer a rejected option again unless the user brings it back.
 - Keep superseded layouts in the script under their own names until the user drops them, and make the newest one the default.
 - When a choice was a trade-off, note what was given up.
+- Keep the project profile as one current rule set, ordered by topic. When review rounds disagree, the later round wins; list each replaced rule, and the round that replaced it, in a short history section.
 
 ## Pickers for choices that are hard to say in words
 
@@ -20,6 +21,7 @@
 - **Continuous parameters** (camera azimuth, elevation, roll, scale, cutoffs): build a page with sliders that prints the parameters ready to paste back as code.
 - **Layouts** (slides, figure pages): build a layout board, a page backed by its database with one canvas per item at its real size. The author draws regions, text and notes and writes a note per item; the agent reads them back and replies per item in a reply field. The agent never overwrites the author's shapes or notes. To propose shapes, ask the author to close the board first, then append to the stored shapes. See [slides.md](slides.md#layout-review-on-a-board).
 - Re-render from the picked parameters, and record them in the script under a named job.
+- A picker or tool opens in a working state, with real data or clearly marked example data. It speaks to the reader as "you", says what to do next ("then press Save and tell the agent in chat"), and its status line states the result ("Saved.", "Not saved yet.").
 
 ## Everything from a script
 
@@ -36,6 +38,7 @@
 - Reply per item: what changed, or why not.
 - Many items: one agent per section applies its notes, an independent agent checks each section against the notes, and the section agent fixes what it found.
 - **Distil** the general notes into rules in the project profile, each with its date, source and one line of Why, so promotion into this skill stays mechanical.
+- An item's own note overrides a general rule for that item; do not extend the exception to other items.
 - A comment applies to the element it was left on. When it states a pattern ("same colorbar problem"), apply it to every sibling panel and say so.
 - Keep a **Changes** table on the review page (location | comment | what was done) and a short list of open questions. Bump the version note each round.
 - Archive review marks before resetting them for a new round.

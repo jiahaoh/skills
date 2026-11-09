@@ -9,7 +9,7 @@ Rules that came back as review comments on first drafts of figures, slides, repo
 
 ## Start here
 
-1. Look for the project's visualization profile: a file such as `docs/visualization-standard.md`, or a section the project's agent instructions point to. It holds the project's palette files, accent colors, fonts, page sizes and decisions already made. **Project rules override this skill.**
+1. Look for the project's visualization profile: a file such as `docs/visualization-standard.md`, or a section the project's agent instructions point to. It holds the project's color meanings or palette files, reference material, overrides and decisions already made; look values come from the design system (step 2). **Project rules override this skill.**
 2. If the project uses a design system, read its tokens and its chart and slide sections. They override this skill's look defaults (colors, fonts, chart look, slide layout); the project profile overrides both.
 3. Read only the reference files the task needs (index below).
 4. Before designing, confirm the inputs: which label version, which embedding, which reference level. Several design rounds were lost to the wrong input.
@@ -46,7 +46,7 @@ Rules that came back as review comments on first drafts of figures, slides, repo
 ## Checklist before sending
 
 - [ ] Print: panels at final size in mm; Arial (or the project font); ticks ≥ 6 pt (≥ ~4 pt inside small panels); vector files plus a PNG preview.
-- [ ] Slides: figures at slot size in slide px; chart text 22/20/18/17 px, diagram text ≥ 22 px; about 40 words; nothing on the face that belongs in the notes; the last build reads alone.
+- [ ] Slides: figures at slot size in slide px; chart and diagram text at the design system's sizes, nothing below its floor; about 40 words; nothing on the face that belongs in the notes; the last build reads alone.
 - [ ] Reruns produce identical bytes (same SHA-256 when nothing changed).
 - [ ] Colors from the frozen palette or design-system tokens; every color code has a key; unclassified is grey.
 - [ ] No overlaps between labels, strips, leaders and data; leaders short and uncrossed.
@@ -59,7 +59,8 @@ Rules that came back as review comments on first drafts of figures, slides, repo
 
 ## Maintaining these rules
 
-- When a review agrees on a new rule, add it to the project profile under **Candidates**, with the date, its source (which page and which comment) and one line of **Why**.
+- When a review agrees on a new rule, add it to the project profile under **Candidates**, with the date, its source (which page and which comment) and one line of **Why**. Keep each candidate's status current: adopted (and where), still a candidate, or rejected.
+- Route each rule to one home. Look values (colors, type, sizes, component appearance) go to the design system, then into every project that vendors its tokens. General practice goes to this skill. Rules about one project's data, colors or reference material stay in its profile. Precedence when they disagree: project profile, then design system (look), then this skill.
 - Promote a candidate into this skill only when it also holds in a second project, or when the user says it is general. Write it without project names, data or links, because this repository is public.
 - Apply a newly agreed rule only to the cases discussed. When it would overturn other review decisions, ask first.
 - Record each promotion below with its date and source.
@@ -67,4 +68,5 @@ Rules that came back as review comments on first drafts of figures, slides, repo
 
 ### Promotions
 
+- 2026-11-09: rules routed here from one project's profile and its design-system notes when the author split the material into four layers (design system for the look, this skill for the how, the project profile for project rules, a shared template for the machinery), declared general by the author: [references/slides.md](references/slides.md) (slide-drawn charts only when animated, the histogram for distribution-changing methods, reduced motion, method principle, keys below tables, answer reviewer questions in the reply, dark ground never as a theme; chart sizes and line weights now taken from the design system), [references/color-and-labels.md](references/color-and-labels.md) (one mapping across talks, reports and papers; color never alone; 4.5:1 contrast; third-party logos as labels; real minus; tabular figures), [references/reports.md](references/reports.md) (sticky table of contents, filter row, plain writing, sentence case, technical terms in English, citation under borrowed figures, offline fonts), [references/process.md](references/process.md) (one current rule set with a history, picker voice and working state, an item's note overrides a general rule) and this file (candidate status, routing to one home).
 - 2026-11-09: the slide rules in [references/slides.md](references/slides.md), the claim rules, the Numbers block and the layout-board pattern were declared general by the author, after five layout-board review rounds of one talk. Several also confirm existing rules in a second project: one point per slide (one focus per figure), fill the frame (fill large gaps), labels never cover an image (nothing overlaps), square-swatch image keys (every color code has a key).
